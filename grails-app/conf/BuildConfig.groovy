@@ -42,10 +42,16 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
         // runtime 'mysql:mysql-connector-java:5.1.20'
+        runtime 'org.antlr:antlr-runtime:3.4'
+        runtime 'org.aspectj:aspectjrt:1.6.12'
+        runtime 'com.google.guava:guava:12.0'
+        runtime 'xerces:xercesImpl:2.10.0'
+        runtime 'org.slf4j:slf4j-api:1.6.6'
+
     }
 
     plugins {
-        runtime ":hibernate:$grailsVersion"
+        //runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.3"
         runtime ":resources:1.1.6"
 
