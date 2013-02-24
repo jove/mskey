@@ -12,6 +12,7 @@ class HomeController {
     @Autowired
     private XhiveSessionAccess acc
 
+    def KeyService keyService
 
     @Transactional(readOnly = true)
     def test() {
@@ -26,6 +27,6 @@ class HomeController {
     }
 
     def view(){
-        return [products:['Access','Word']]
+        return [products:keyService.getProducts(null)]
     }
 }
