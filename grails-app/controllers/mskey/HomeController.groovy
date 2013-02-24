@@ -14,10 +14,18 @@ class HomeController {
 
 
     @Transactional(readOnly = true)
-    def index() {
+    def test() {
         def query=DEFAULT_XQUERY
         XhiveXQueryValueIf result = acc.query(query, Collections.<String, Object> emptyMap()).next()
         render result.asString()
         return
+    }
+
+    def index(){
+
+    }
+
+    def view(){
+        return [products:['Access','Word']]
     }
 }
