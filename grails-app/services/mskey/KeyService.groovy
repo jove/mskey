@@ -21,7 +21,7 @@ class KeyService {
     @Transactional(readOnly = true)
     def getKeysForProduct(String keyword) {
         def lib=xdb.session.database.root.getByPath("msdn")
-        def result=lib.executeXQuery('for $p in YourKey/Product_Key where contains(data($p/@Name),\''+keyword+'\') return data($p/Key)')
+        def result=lib.executeXQuery('for $p in YourKey/Product_Key where $p/@Name=\''+keyword+'\' return data($p/Key)')
         def rv=[]
         result.each{rv<<(it.toString())}
         return rv
