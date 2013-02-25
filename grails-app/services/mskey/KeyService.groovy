@@ -11,7 +11,7 @@ class KeyService {
     @Transactional(readOnly = true)
     def getProducts(String keyword) {
         def lib=xdb.session.database.root.getByPath("msdn")
-        def result=lib.executeXQuery('for $p in YourKey/Product_Key order by $p/@Name return data($p/@Name)')
+        def result=lib.executeXQuery('distinct-values(for $p in YourKey/Product_Key order by $p/@Name return data($p/@Name))')
         def products=[]
         result.each{products<<it}
         //log.error result.toString()
