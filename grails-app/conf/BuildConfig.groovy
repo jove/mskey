@@ -36,6 +36,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://repo.jfrog.org/artifactory/libs-releases/"
     }
 
     dependencies {
@@ -45,9 +46,9 @@ grails.project.dependency.resolution = {
         runtime 'org.antlr:antlr-runtime:3.4'
         runtime 'org.aspectj:aspectjrt:1.6.12'
         runtime 'com.google.guava:guava:12.0'
-        runtime 'xerces:xercesImpl:2.10.0'
+        runtime 'xerces:xercesImpl:2.11.0'
         runtime 'org.slf4j:slf4j-api:1.6.6'
-
+        runtime 'it.unimi.dsi:fastutil:6.4.3'
     }
 
     plugins {
