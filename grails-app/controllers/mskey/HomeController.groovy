@@ -4,6 +4,7 @@ import com.xhive.query.interfaces.XhiveXQueryValueIf
 import com.xhive.spring.XhiveSessionAccess
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
+import grails.converters.JSON
 
 class HomeController {
     private static final String DEFAULT_XQUERY = "document { <result>Hello there. " +
@@ -28,5 +29,12 @@ class HomeController {
 
     def view(){
         return [products:keyService.getProducts(null)]
+    }
+
+    def keys(){
+        def keyword=params.product
+        def rv=keyService.getKeysForProduct(keyword)
+        render rv as JSON
+        return
     }
 }
